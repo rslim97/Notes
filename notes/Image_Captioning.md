@@ -1,0 +1,2 @@
+1. Paper: An End-to-End Trainable Neural Network for Image-based Sequence Recognition and Its Application to Scene Text Recognition - Baoguang Shi et al
+2. Convolutional Image Captioning, Jyoti Aneja, Aditya Deshpande, Alexander G. Schwig.

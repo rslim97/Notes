@@ -1,0 +1,4 @@
+- On implementing research papers, by papers-100-lines:
+	- Easy ones are seminal papers demonstrated on toy problems with minimal compute.
+	- Medium ones add training complexities or multiple components.
+	- Hard ones are full systems with heavy engineering, large datasets, and heavy compute.
