@@ -36,7 +36,8 @@ l_1'x_1+l_2'x_2+l_3'x_3 &= 0 \\
 	\end{align*}
 	$$
 	- Representation of a conic, 5 dof $$\begin{pmatrix}a\\b\\c\\d\\e\\f\end{pmatrix}$$
-	- $$$$
+	- To represent the relationship between conic and points, we write $$x^TCx = 0$$
+	- $C = \begin{bmatrix}a && b/2 && d/2\\ b/2 &&c && e/2 \\ d/2 && e/2 && f\end{bmatrix}$
 	- The intrinsic camera parameters matrix is an example of a conic (has 5 dof).
 	- C is a homogeneous representation of a conic.
 	- Only ratios of the matrix elements are important, multiplying $C$ by a non-zero scalar has no effect.
@@ -44,6 +45,13 @@ l_1'x_1+l_2'x_2+l_3'x_3 &= 0 \\
 	- Each point $x_i=(x_i,y_i)$ places one constraint on the conic coefficients:
 		$$ ax_i^2+bx_iy_i + cy_i^2 + dx_i + ey_i + f = 0 $$
 	- Where $$ c = \begin{pmatrix}a,b,c,d,e,f\end{pmatrix}^T $$ is the conic $C$ represented by a 6-vector.
+	$$\begin{bmatrix}x_1^2 && x_1y_1 && y_1^2 && x_1 && y_1 && 1 \\
+	&& && \ldots && && \\
+	&& && \ldots && && \\
+	&& && \ldots && && \\
+	&& && \ldots && && \\
+	\end{bmatrix}\begin{pmatrix}a\\b\\c\\d\\e\\f\end{pmatrix} = 0$$
+	- The $A_{5\times 6}$. The conic is a null vector of this $5\times 6$ matrix. Can be solved using SVD, and taking the eigenvector of $V$ corresponding to the smallest eigenvalue, i.e. the one with the least principal component. 
 	- This shows that a conic is determined uniquely (up to scale) by five points in general.
 	
 	```
@@ -77,6 +85,47 @@ l^TC^{-T}l&=0 \\
 \end{align*}
 $$
 	- Recall $$(A^T)^{-1}=(A^{-1})^T$$ if $A$ is an $n\times n$ invertible matrix. Since $C$ is symmetric $C^{-1}=C^{-T}$.
+16. Degenerate conic
+	1. first degenerate conic: A degenerate conic made of 2 straight lines.
+		1. $C=lm^T + ml^T$
+		2. $l$ and $m$ are lines. Points on $l$ satisfy $l^Tx=0$, similarly $m^Tx=0$. The two lines themselves is the conic.
+		3. Proof: $x^TCx = x^T(lm^T+ml^T)x = (x^Tl)(m^Tx)+(x^Tm)(l^Tx)=0$
+		4. which consists of $x^Tl=l^Tx=l_1x_1+l_2x_2+l_3$.
+		5. and $m^Tx = x^Tm = m_1x_1 + m_2x_2 + m_3x_3$.
+		6. has rank(C) = 2.
+	2. Second degenerate conic: made of one line or two duplicate lines.
+		1. $C=ll^T + ll^T$
+		2. Similarly we have $l^Tx=0, x^Tx=0$
+		3. $x^TCx = x^T(ll^T+ll^T)x = (x^Tl)(l^Tx) + (x^Tl)(l^Tx) = 0$
+		4. which consists of $x^Tl=l^Tx=l_1x_1+l_2x_2+l_3$
+		5. has rank(C) = 1.
+	3. Third degenerate conic: made of two points.
+		1. $C^* = xy^T + yx^T$ has rank(C) = 2.
+	4. Fourth degenerate conic:  made of a point or two duplicate points.
+		1. $C^* = xx^T + xx^T$ has rank(C)=1.
+```
+	| Degenerate Conic      | Degenerate Dual Conic|
+	| --------------------- | -------------------- |
+	| $ml^T + lm^T$         | $xy^T + yx^T$        |
+	| $ll^T + ll^T$         | $xx^T + xx^T$        |
+```
+17. Planar projective transformations for points
+	1. Projectivity, mapping from $\mathrm{P}^2$ to $\mathrm{P}^2$.
+	2. such that three points $x_1$, $x_2$, and $x_3$. Why three? (because a plane in 3D has three degrees of freedom?) lie on the same line if and only if $h(x_1)$, $h(x_2)$, $h(x_3)$ do.
+	3. $x' = hx \rightarrow x=h^{-1}x'$.
+	4. Define planar projective transformation, a transformation matrix for objects in 2D plane for example points or lines (in homogeneous coordinates, knowing points or lines have two degrees of freedom, and bumping the dimension by one, i.e. from 2 to 3 coordinates, and keeping the same number of dof), we have:
+	5. $$\begin{pmatrix}x_1'\\x_2'\\x_3'\end{pmatrix}=\begin{bmatrix}
+	h_{11}&&h_{12}&&h_{13} \\ h_{21}&&h_{22}&&h_{23} \\ h_{31}&&h_{32}&&h_{33}
+	\end{bmatrix}\begin{pmatrix}x_1\\x_2\\x_3\end{pmatrix}$$
+	6. or $x'=Hx$. $H$ is a $3\times 3$ matrix, and is homogeneous (only the ratio of the matrix elements is significant).
+	7. $H$ has eight degrees of freedom, nine minus one for scaling.
+18. Projective transformation of a line
+	1. $l^Tx = 0$, $l'^Tx'=0$
+	2. $l^T(H^{-1}H)x = 0$
+	3. $(H^{-T}l)^Tx' = 0 \rightarrow l' = H^{-T}l$
+	4. Under a projective transformation $H$, the points that lie on a line $l$, will be transformed to points that lie on the line $l'=H^{-T}l$
+	5. This means under the point transformation $x'=Hx$, a line transforms as $l'=H^{-T}l$ or $l'^T = l^TH^{-1}$.
+19. Projective transformation of a conic
 ### 3D ###
 1. Many properties and entities of $\mathrm{P}^3$ are straighforward generalizations of those of $\mathrm{P}^2$. Example: The homogeneous coordinates of a point in $\mathrm{P}^3$ Euclidean 3-space is augmented with an extra dimension in $\mathrm{P}^2$. 
 	1. Note: two lines always intersect on $\mathrm{P}^2$, but not always on $\mathrm{P}^3$.
