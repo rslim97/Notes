@@ -1,12 +1,9 @@
+### 2D ###
 1. Homogenize a point in 2D $\begin{pmatrix}x\\ y\end{pmatrix}$ by adding a new dimension, $\begin{pmatrix}x \\ y \\ 1\end{pmatrix}$ and replacing $x$ with $\frac{x_1}{x_3}$ and $y$ with $\frac{x_2}{x_3}$. Or equivalently add a new dimension and now can multiply all dimension by a scale $k$, $\begin{pmatrix}kx\\ ky \\ k\end{pmatrix}=\begin{pmatrix}x'\\ y'\\ w'\end{pmatrix}$
-2. From the equation of a line in 2D, $$\begin{align*}
-ax+by+c&=0 \\
-a(kx)+b(ky)+c(k)&=0\\
-ax_1+bx_2+cx_3&=0 \\
-l_1x_1+l_2x_2+l_3x_3&=0
-\end{align*}$$
-3. Intersection of a point and a line or a line and a point in homogeneous coordinates, $$l^{T}x=0$$
-4. line formed by two points (algebraic derivation)
+2. From the equation of a line in 2D, 
+3. $\displaystyle \begin{align*}ax+by+c&=0 \\a(kx)+b(ky)+c(k)&=0\\ax_1+bx_2+cx_3&=0 \\l_1x_1+l_2x_2+l_3x_3&=0\end{align*}$
+4. Intersection of a point and a line or a line and a point in homogeneous coordinates, $$l^{T}x=0$$
+5. line formed by two points (algebraic derivation)
  $$\begin{align*}
  l_1x_1+l_2x_2+l_3x_3&=0 \\
  l_1x_1'+l_2x_2'+l_3x_3'&=0 \\
@@ -21,8 +18,8 @@ l_1x_1+l_2x_2+l_3x_3&=0
  l &= x \times x'
 	\end{align*}$$
 
-5.  line formed by two points is the normal vector of the plane formed by the two lines, by taking the cross product (geometric interpretation).
-6. point intersected by two lines (algebraic derivation), $\begin{pmatrix}l_1 \\ l_2 \\ l_3 \end{pmatrix}$, 2 dof $\begin{pmatrix}x_1 \\ x_2 \\ x_3 \end{pmatrix}$, 2 dof.
+6.  line formed by two points is the normal vector of the plane formed by the two lines, by taking the cross product (geometric interpretation).
+7. point intersected by two lines (algebraic derivation), $\begin{pmatrix}l_1 \\ l_2 \\ l_3 \end{pmatrix}$, 2 dof $\begin{pmatrix}x_1 \\ x_2 \\ x_3 \end{pmatrix}$, 2 dof.
 $$
 \begin{align*}
 l_1x_1+l_2x_2+l_3x_3 &= 0 \\
@@ -80,3 +77,4 @@ l^TC^{-T}l&=0 \\
 \end{align*}
 $$
 	- Recall $$(A^T)^{-1}=(A^{-1})^T$$ if $A$ is an $n\times n$ invertible matrix. Since $C$ is symmetric $C^{-1}=C^{-T}$.
+### 3D ###
