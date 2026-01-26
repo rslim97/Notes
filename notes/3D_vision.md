@@ -5,8 +5,8 @@ a(kx)+b(ky)+c(k)&=0\\
 ax_1+bx_2+cx_3&=0 \\
 l_1x_1+l_2x_2+l_3x_3&=0
 \end{align*}$$
-3. Inter section of a point and a line or a line and a point in homogeneous coordinates, $$l^{T}x=0$$
-4. a line formed by two points (algebraic derivation)
+3. Intersection of a point and a line or a line and a point in homogeneous coordinates, $$l^{T}x=0$$
+4. line formed by two points (algebraic derivation)
  $$\begin{align*}
  l_1x_1+l_2x_2+l_3x_3&=0 \\
  l_1x_1'+l_2x_2'+l_3x_3'&=0 \\
@@ -21,24 +21,21 @@ l_1x_1+l_2x_2+l_3x_3&=0
  l &= x \times x'
 	\end{align*}$$
 
-5.  a line formed by two points is the normal vector of the plane formed by the two lines, by taking the cross product (geometric interpretation).
-6. a point intersected by two lines (algebraic derivation)
+5.  line formed by two points is the normal vector of the plane formed by the two lines, by taking the cross product (geometric interpretation).
+6. point intersected by two lines (algebraic derivation), $\begin{pmatrix}l_1 \\ l_2 \\ l_3 \end{pmatrix}$, 2 dof $\begin{pmatrix}x_1 \\ x_2 \\ x_3 \end{pmatrix}$, 2 dof.
 $$
 \begin{align*}
 l_1x_1+l_2x_2+l_3x_3 &= 0 \\
 l_1'x_1+l_2'x_2+l_3'x_3 &= 0 \\
-
-
 \end{align*}$$
 	1. Symmetrical to the derivation of line formed by two points case.
 	2. $x=l \times l'$
-7. a point intersected by two lines is the direction vector of a line formed by the intersection of two planes (geometric interpretation).
+7. point intersected by two lines is the direction vector of a line formed by the intersection of two planes (geometric interpretation).
 8. Conics
 	-  
 	$$\begin{align*}
 	ax^2 + bxy + cy^2 + dx + ey + f &= 0 \\ 
 	ax_1^2 + bx_1x_2 + cx_2^2 + dx_1 + ex_2 + f &= 0 \\
-	
 	\end{align*}
 	$$
 	- Representation of a conic, 5 dof $$\begin{pmatrix}a\\b\\c\\d\\e\\f\end{pmatrix}$$
@@ -81,4 +78,5 @@ x&=C^{-1}l\\
 l^TC^{-T}CC^{-1}l&=0 \\
 l^TC^{-T}l&=0 \\
 \end{align*}
-$$. Recall $$(A^T)^{-1}=(A^{-1})^T$$ if $A$ is an $n\times n$ invertible matrix. Since $C$ is symmetric $C^{-1}=C^{-T}$.
+$$
+	- Recall $$(A^T)^{-1}=(A^{-1})^T$$ if $A$ is an $n\times n$ invertible matrix. Since $C$ is symmetric $C^{-1}=C^{-T}$.
