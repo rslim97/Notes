@@ -220,3 +220,6 @@ if __name__ == '__main__':
 Related:
 1. Spatial Transformer network
 2. Fully Convolutional Network (FCN)
+
+References:
+1. https://chao-ji.github.io/jekyll/update/2018/07/19/BilinearResize.html
