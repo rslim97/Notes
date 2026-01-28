@@ -12,3 +12,9 @@
 	6. convolve resulting output with kernel size of $K$:
 	7. $\frac{12+0-3}{1}+1=10$. 
 	8. Since in backpropagation, $dLdx = dLdz\circledast flipped(W)$, where $W$ is the filter.
+4. How big is our receptive field?
+	1. $r_0=\sum_{l=1}^{L}\left((k_l-1)\prod_{i=1}^{l-1}s_i\right)+1$
+		1. $r_0$ is receptive field size
+		2. $k_l$ is kernel size at layer $l$.
+		3. $\sum_{l=1}^{L}$ sum over network layers.
+		4. $\prod_{i=1}^{l-1}$ is the product of strides up to layer $l$.
