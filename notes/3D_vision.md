@@ -166,21 +166,21 @@ $$
 		4. can always be decomposed as:
 			1. $A=R(\theta)R(-\phi)DR(\phi)$
 			2. This decomposition follows directly from singular value decomposition.
-		5. Projective transformation: a non-singular linear transformation of homogeneous coordinates.
-			1. $x'=H_Px=\begin{bmatrix}A && t \\ \vec{v}^T && u\end{bmatrix}x$ where vector $\vec{v}=(v_1,v_2)^T$ and $u$ can be 0. 
-			2. Note: it is not always possible to make $\begin{bmatrix}v^T && u\end{bmatrix}$ to be $\begin{bmatrix}0&&0&&1\end{bmatrix}$. 
-			3. $H_P$ has nine elements with only the ratio of its elements is significant, so the transformation has __eight degrees of freedom__.
-			4. can be computed from four point correspondences, with no three collinear on either plane.
-			5. It is not possible to distinguish between orientation preserving and orientation reversing projectivities in $\mathrm{P}^2$.
-			6. Decomposition of a projective transformation:
-				1. $H=H_SH_AH_P=\begin{bmatrix}sR && t \\ 0^T && 1\end{bmatrix}\begin{bmatrix}K && 0 \\ 0^T && 1\end{bmatrix}\begin{bmatrix}I && 0 \\ v^T && u\end{bmatrix}=\begin{bmatrix}A && t \\ v^T && u\end{bmatrix}$
-				2. $A$ is a non-singular matrix given by: $A=sRK + tv^T$
-					1. where $s$ is the scale
-					2. $R$ is the rotation matrix
-					3. $K$ is an upper triangular matrix
-					4. $t$ is translation vector
-					5. $v^T$ is a $2\times 1$ vector
-				3. Decomposition is valid if $u\neq 0$, and is unique if $s$ is chosen positive.
+	5. Projective transformation: a non-singular linear transformation of homogeneous coordinates.
+		1. $x'=H_Px=\begin{bmatrix}A && t \\ \vec{v}^T && u\end{bmatrix}x$ where vector $\vec{v}=(v_1,v_2)^T$ and $u$ can be 0. 
+		2. Note: it is not always possible to make $\begin{bmatrix}v^T && u\end{bmatrix}$ to be $\begin{bmatrix}0&&0&&1\end{bmatrix}$. 
+		3. $H_P$ has nine elements with only the ratio of its elements is significant, so the transformation has __eight degrees of freedom__.
+		4. can be computed from four point correspondences, with no three collinear on either plane.
+		5. It is not possible to distinguish between orientation preserving and orientation reversing projectivities in $\mathrm{P}^2$.
+		6. Decomposition of a projective transformation:
+			1. $H=H_SH_AH_P=\begin{bmatrix}sR && t \\ 0^T && 1\end{bmatrix}\begin{bmatrix}K && 0 \\ 0^T && 1\end{bmatrix}\begin{bmatrix}I && 0 \\ v^T && u\end{bmatrix}=\begin{bmatrix}A && t \\ v^T && u\end{bmatrix}$
+			2. $A$ is a non-singular matrix given by: $A=sRK + tv^T$
+				1. where $s$ is the scale
+				2. $R$ is the rotation matrix
+				3. $K$ is an upper triangular matrix
+				4. $t$ is translation vector
+				5. $v^T$ is a $2\times 1$ vector
+			3. Decomposition is valid if $u\neq 0$, and is unique if $s$ is chosen positive.
 ### 3D ###
 1. Many properties and entities of $\mathrm{P}^3$ are straigthforward generalizations of those of $\mathrm{P}^2$. Example: The homogeneous coordinates of a point in $\mathrm{P}^3$ Euclidean 3-space is augmented with an extra dimension in $\mathrm{P}^2$. 
 	1. Note: two lines always intersect on $\mathrm{P}^2$, but not always on $\mathrm{P}^3$.
