@@ -217,3 +217,7 @@ $$
 	1. Plane defined uniquely by the *join of three points* (not collinear), or the *join of a line and point* (not incident), in general position.
 	2. Two distinct planes intersect in a *unique line*.
 	3. Three distinct planes intersect in a *unique point*.
+
+
+References:
+1. 3D vision NUS,  Prof. Lee Gim Hee.
